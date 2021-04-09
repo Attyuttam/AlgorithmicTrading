@@ -5,11 +5,11 @@ This repository contains 3 projects:
      - Read the csv file sp_500_stocks.csv which has the list of all the tickers(short abbreviation of stock names, like Apple stock is                      AAPL)
      - Create a datframe which contains of the following fields: 'Ticker','Stock Price', 'Market Capitalization','Number of Shares to                       Buy'. These will be the row headers of our resultant excel file.
      - Initialize the IEX_CLOUD_API token, we will be using the APIs exposed by IEX_CLOUD_API(the free one which gives random values for                     details of a stock, the real one is paid).
-     - Parse the csv file mentioned in step 'a' and parse the stock tickers, then make a call to the IEX_CLOUD_API with a chunk of the                       tickers to get the details of the corresponding stock
+     - Parse the csv file mentioned in step 1 and parse the stock tickers, then make a call to the IEX_CLOUD_API with a chunk of the                       tickers to get the details of the corresponding stock
      - Parse the output from the API and fill in the dataframe with the values 'Ticker', 'Share Price' and 'Market Capitalization'. For                     the field 'Number of Shares to Buy' we set all the cells of this column to 'N/A' as the values of this column is based upon the                       user input
      - We take as input the total amount the user wants to invest
      - As all the stocks have equal weight, hence the amount to be invested in each stock(position size) is equal to the total amount the                   user wants to invest divided by the total number of shares available(which is 505)
-     - Now in step 'g' we have calculated the total amount to be invested in each stock, thus, we divide the amount to be invested in                       each stock by the share value of that stock to get the number of shares to buy for each stock.
+     - Now in step 7 we have calculated the total amount to be invested in each stock, thus, we divide the amount to be invested in                       each stock by the share value of that stock to get the number of shares to buy for each stock.
      - We then populate the dataframe with the number of shares to buy for each stock
      - We finally convert this dataframe to an excel file('Recommended Trades') which is ready for download
                 
