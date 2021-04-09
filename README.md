@@ -1,8 +1,8 @@
 # AlgorithmicTrading
 This repository contains 3 projects: 
-1. Equal-Weight S&P Index Fund 
-       * This is a pretty simple project where the input is a simple list of details about various stocks(taken from the excel sheet provided in this          folder itself) and the total amount that the user wants to invest and the output is the amount of shares that the user should buy for each            stock. As you might have seen in the name that the name of the project is Equal-Weight S&P Index fund, so we assume that all the stocks have          equal weight. So, these are the high level steps done in this project:
-                * Read the csv file sp_500_stocks.csv which has the list of all the tickers(short abbreviation of stock names, like Apple stock is                      AAPL)
+1. Equal-Weight S&P Index Fund:
+      *This is a pretty simple project where the input is a simple list of details about various stocks(taken from the excel sheet provided in this          folder itself) and the total amount that the user wants to invest and the output is the amount of shares that the user should buy for each            stock. As you might have seen in the name that the name of the project is Equal-Weight S&P Index fund, so we assume that all the stocks have          equal weight. So, these are the high level steps done in this project: 
+               * Read the csv file sp_500_stocks.csv which has the list of all the tickers(short abbreviation of stock names, like Apple stock is                      AAPL)
                 * Create a datframe which contains of the following fields: 'Ticker','Stock Price', 'Market Capitalization','Number of Shares to                       Buy'. These will be the row headers of our resultant excel file.
                 * Initialize the IEX_CLOUD_API token, we will be using the APIs exposed by IEX_CLOUD_API(the free one which gives random values for                     details of a stock, the real one is paid).
                 * Parse the csv file mentioned in step 'a' and parse the stock tickers, then make a call to the IEX_CLOUD_API with a chunk of the                       tickers to get the details of the corresponding stock
