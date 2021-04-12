@@ -13,7 +13,29 @@ This repository contains 3 projects:
      - We then populate the dataframe with the number of shares to buy for each stock
      - We finally convert this dataframe to an excel file('Recommended Trades') which is ready for download
                 
-3. Quantitative Momentum Investing Strategy
+2. Quantitative Momentum Investing Strategy
+   - In the project, we are not just dividing the portfolio size by the price of each share to get the number of stocks to buy but here, we find out the 50 most valuable stocks to buy on the basis of their collective performance in one year, six month, three month and one month. So the steps we follow to achieve this is as (NOTE: I am skipping the part where we attach IEX_CLOUD_TOKEN etc as we have already discussed that in the first project):
+      - Import the necessary libraries
+      - Get all the stock tickers from the excel that we have. 
+      - We create a data frame with the columns:  
+         - 'Ticker',
+         - 'Price',
+         - 'Number of shares to buy',
+         - 'One-year price return',
+         - 'One-year return percentile',
+         - 'Six-month price return',
+         - 'Six-month return percentile',
+         - 'Three-month price return',
+         - 'Three-month return percentile',
+         - 'One-month price return',
+         - 'One-month return percentile',
+         - 'HQM score'
+      - The values for the one-year percent return and all the monthly percent returns are obtained from the stats API which I have mentioned in the notebook
+      - We then fill up all the values that we have received from the API and leave all the rest as N/A
+      - We then calculate the percentile for each time period(one year, six month, three month, one month) by using the stats method from scipy library
+      - Then we calculate the HQM score or High Quality Momentum score which is essentially the mean of percentiles of all the available time periods, higher the HQM score, better performing is the stock
+      - So, we then sort the dataframe on the basis of the HQM score to extract the 50 best performing stocks(Stocks with the highest HQM score).
+      - We then put our resultant dataframe in an excel.
 4. Quantitative Value Investing Strategy
 
 These codes are done as part of the tutorial provided by free code camp on algorithmic trading.
