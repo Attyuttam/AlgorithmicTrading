@@ -14,7 +14,7 @@ This repository contains 3 projects:
      - We finally convert this dataframe to an excel file('Recommended Trades') which is ready for download
                 
 2. Quantitative Momentum Investing Strategy
-   - In the project, we are not just dividing the portfolio size by the price of each share to get the number of stocks to buy but here, we find out the 50 most valuable stocks to buy on the basis of their collective performance in one year, six month, three month and one month. So the steps we follow to achieve this is as (NOTE: I am skipping the part where we attach IEX_CLOUD_TOKEN etc as we have already discussed that in the first project):
+   - In this project, we are not just dividing the portfolio size by the price of each share to get the number of stocks to buy but here, we find out the 50 most valuable stocks to buy on the basis of their collective performance in one year, six month, three month and one month. So the steps we follow to achieve this is as (NOTE: I am skipping the part where we attach IEX_CLOUD_TOKEN etc as we have already discussed that in the first project):
       - Import the necessary libraries
       - Get all the stock tickers from the excel that we have. 
       - We create a data frame with the columns:  
@@ -37,6 +37,7 @@ This repository contains 3 projects:
       - So, we then sort the dataframe on the basis of the HQM score to extract the 50 best performing stocks(Stocks with the highest HQM score).
       - We then put our resultant dataframe in an excel.
 4. Quantitative Value Investing Strategy
+   - In this project, we are using another technique to sort out the best 50 stocks (the weight of each and every stock is same as discussed previously). This technique is called the Value investing strategy, in this strategy, we pick out the stocks on the basis of their value which is dettermined by several paramters but the one used in this project are: 'Price-to-earnings ratio','Price-to-book ratio','Price-to-sales ratio','Enterprise value','Gross Profit' and 'EBITDA' which stands for Earnings Before Interest, Taxes, Depreciation, and Amortization and is a metric used to evaluate a company's operating performance. The steps are exactly similar to what we had done in the 2nd project, only the API used is different and in this project as there were lots of cells with 'None' value we did a basic data cleaning process.
 
 These codes are done as part of the tutorial provided by free code camp on algorithmic trading.
 Youtube link: https://youtu.be/xfzGZB4HhEE
